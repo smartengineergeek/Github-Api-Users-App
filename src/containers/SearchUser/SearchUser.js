@@ -73,9 +73,9 @@ function SearchUser(){
                     data!== undefined  ? 
                     <>
                         <Card data={data} />
-                        <Route path="/user/:username/repos" component={User.Repos} />
-                        <Route path="/user/:username/followers" component={User.Followers} />
-                        <Route path="/user/:username/following" component={User.Following} />                        
+                        <Route path="/search-user/:username/repos" component={User.Repos} />
+                        <Route path="/search-user/:username/followers" component={User.Followers} />
+                        <Route path="/search-user/:username/following" component={User.Following} />                        
                     </>
                     : null
                 }

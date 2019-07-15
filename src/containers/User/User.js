@@ -1,6 +1,7 @@
 import React from 'react'
 
 function Repos(props){
+    console.log(props.location)
     let queryParams = new URLSearchParams(props.location.search)
     console.log(queryParams)
     return(<div>Repos</div>)

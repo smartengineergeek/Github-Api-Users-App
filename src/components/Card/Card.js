@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 const Container = styled.div`
     display: flex;
@@ -40,7 +40,7 @@ const Card = (props) => (
         <Links>
             <ul>
                 <li><Link to={`/search-user/${props.data.login}/repos`}>{props.data.public_repos} public repos</Link></li>
-                <li><Link to={`/search-user/${props.data.login}/followers`}>{props.data.followers_url} followers</Link></li>
+                <li><NavLink to={`/search-user/${props.data.login}/followers`}>{props.data.followers_url} followers</NavLink></li>
                 <li><Link to={`/search-user/${props.data.login}/following`}>{props.data.following_url} following</Link></li>
             </ul>
         </Links>
