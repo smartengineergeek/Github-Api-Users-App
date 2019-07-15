@@ -1,5 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Switch, Route } from 'react-router-dom'
+
+import Card from '../../components/Card/Card'
+import * as User  from '../User/User'
 
 const InputSearch = styled.input`
    width: 100%;
@@ -66,7 +70,14 @@ function SearchUser(){
                 <>
                 { showError ? <p>input field cannot be empty</p>: null}
                 {
-                    data!== undefined  ? <img src={data.avatar_url} alt="not-found" />: null
+                    data!== undefined  ? 
+                    <>
+                        <Card data={data} />
+                        <Route path="/user/:username/repos" component={User.Repos} />
+                        <Route path="/user/:username/followers" component={User.Followers} />
+                        <Route path="/user/:username/following" component={User.Following} />                        
+                    </>
+                    : null
                 }
                 </>:
                 <>
