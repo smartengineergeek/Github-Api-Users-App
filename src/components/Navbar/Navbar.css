@@ -1,0 +1,17 @@
+.navbar-main{
+    width: 100%;
+    height: 70px;
+    background-color: #000;
+    color: #fff;
+    font-size: 12px;
+}
+.navbar-main ul{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 10px;
+}
+.navbar-main ul li{
+    padding: 10px;
+    background-color: #fff;
+    color: #000;
+}
