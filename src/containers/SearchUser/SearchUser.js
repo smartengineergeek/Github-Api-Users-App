@@ -73,7 +73,7 @@ function SearchUser(){
                     data!== undefined  ? 
                     <>
                         <Card data={data} />
-                        <Route path="/search-user/:username/repos" component={User.Repos} />
+                        <Route path="/search-user/:username/repos" render={() => <User.Repos username={data.login} />} />
                         <Route path="/search-user/:username/followers" component={User.Followers} />
                         <Route path="/search-user/:username/following" component={User.Following} />                        
                     </>
@@ -82,8 +82,9 @@ function SearchUser(){
                 </>:
                 <>
                  <ul>
-                    {
-                        history.map((datum, index) => (<li key={index}>{datum.name}</li>))
+                    {   history.length > 0  ? 
+                        history.map((datum, index) => (<li key={index}>{datum.name}</li>)):
+                        <h3>No history found</h3>
                     }
                 </ul>
                 </>

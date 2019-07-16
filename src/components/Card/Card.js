@@ -31,6 +31,7 @@ const Card = (props) => (
         </Avatar>
         <Details>
             <ul>
+                <li>Username {props.data.login}</li>
                 <li>Name {props.data.name}</li>
                 <li>Location {props.data.location}</li>
                 <li>Bio {props.data.bio}</li>
@@ -40,8 +41,8 @@ const Card = (props) => (
         <Links>
             <ul>
                 <li><Link to={`/search-user/${props.data.login}/repos`}>{props.data.public_repos} public repos</Link></li>
-                <li><NavLink to={`/search-user/${props.data.login}/followers`}>{props.data.followers_url} followers</NavLink></li>
-                <li><Link to={`/search-user/${props.data.login}/following`}>{props.data.following_url} following</Link></li>
+                <li><NavLink to={`/search-user/${props.data.login}/followers`}>{props.data.followers} followers</NavLink></li>
+                <li><Link to={`/search-user/${props.data.login}/following`}>{props.data.following} following</Link></li>
             </ul>
         </Links>
     </Container>
