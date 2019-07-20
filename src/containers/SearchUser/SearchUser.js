@@ -6,7 +6,7 @@ import Card from '../../components/Card/Card'
 import * as User  from '../User/User'
 
 const InputSearch = styled.input`
-   width: 100%;
+   width: 80%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
@@ -26,12 +26,21 @@ const FlexContainer = styled.div `
 
 const Button = styled.button`
     color: default;
+    width: 10%;
+    height: 20px;
+    margin: 20px;
 `
 function SearchUser(){ 
     const [data, setData] = React.useState();
     const [history, setHistory] = React.useState([]);
     const [tab, setTab] = React.useState('search');// tabs => search, history
     const [showError, setShowError] = React.useState(false);
+    /*
+    React.useEffect(() => {
+        document.getElementById('searchInput').value = 'eravinashm';
+        document.getElementById('searchInput').onkeypress;
+    }, []);
+    */
     // keypress handler
     async function keyPressHandler(event){
         if(event.key === 'Enter'){
@@ -74,8 +83,8 @@ function SearchUser(){
                     <>
                         <Card data={data} />
                         <Route path="/search-user/:username/repos" render={() => <User.Repos username={data.login} />} />
-                        <Route path="/search-user/:username/followers" component={User.Followers} />
-                        <Route path="/search-user/:username/following" component={User.Following} />                        
+                        <Route path="/search-user/:username/followers" render={() => <User.Followers username={data.login}/>} />
+                        <Route path="/search-user/:username/following" render={() => <User.Following username={data.login}/>} />                        
                     </>
                     : null
                 }

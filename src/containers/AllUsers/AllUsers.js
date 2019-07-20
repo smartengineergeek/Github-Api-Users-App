@@ -1,34 +1,28 @@
 import React from 'react';
 import styled from 'styled-components'
-
+import ClipLoader from 'react-spinners/ClipLoader';
 import Service from '../../services/Service';
 
 const Wrapper = styled.div`
     padding-top: 20px;
 `
 const Box = styled.div`
-    // background-color: #000;
-    // color: #fff;
-    // height: 100px;
-    // width: 200px;
-    // flex-wrap: wrap;
-    // padding: 5px;
-    border: solid 1px #000;
+  border: solid 1px #000;
+  height: 100px;
+  width: 200px;
+  margin: 10px;
+  background-color: #322f31;
+  text-align: center;
 `
 const FlexContainer = styled.div`
-  -ms-box-orient: horizontal;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -moz-flex;
-  display: -webkit-flex;
   display: flex;
   align-content: space-between;
-  // -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
   flex-direction: row;
-  width: 500px;
-  height: 400px;
+`
+const A = styled.a`
+  color: #fff;
+  padding: 20%;
 `
 function Users() {
   const [data, loading] = Service("https://api.github.com/users");
@@ -36,9 +30,9 @@ function Users() {
     <Wrapper>
       <h3>Data</h3>
       {
-        loading ? ( "Loading..." ): 
+        loading ? <center><ClipLoader size={75} /></center>: 
           <FlexContainer>
-          { data.map(datum => <Box><p key={datum.id}>{datum.login}</p></Box>)}
+          { data.map(datum => <Box key={datum.id}><A href={datum.html_url} key={datum.id}>{datum.login}</A></Box>)}
           </FlexContainer>
       }
     </Wrapper>

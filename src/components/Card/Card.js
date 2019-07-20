@@ -10,24 +10,26 @@ const Container = styled.div`
     justify-content: space-between;
 `
 const Avatar = styled.div`
-    border: solid 1px #000;
+    border: solid 1px grey;
 `
 
 const Details = styled.div`
     display: flex;
     flex-direction: column;
-    border: solid 1px #000;
 `
 
 const Links = styled.div`
     display: flex;
     flex-direction: column;
-    border: solid 1px #000;
 `
+const Img = styled.img`
+    height: 100px;
+`
+
 const Card = (props) => (
     <Container>
         <Avatar>
-            <img src={props.data.avatar_url} alt='not-found' />
+            <Img src={props.data.avatar_url} alt='not-found' />
         </Avatar>
         <Details>
             <ul>

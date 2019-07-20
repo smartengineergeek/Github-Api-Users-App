@@ -8,8 +8,8 @@ function AppRoutes(){
     return(
         <Switch>
             <Route path="/" exact render={() => <Redirect to="/search-user" />} />
-            <Route path="/users" component={AllUsers} />
             <Route path="/search-user" component={SearchUser} />
+            <Route path="/users" component={AllUsers} />
             <Route path="*" component={NotFound} />
         </Switch>
     )
