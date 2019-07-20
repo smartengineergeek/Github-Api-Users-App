@@ -1,6 +1,6 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## https://github-api-users-app.netlify.com/
 
-## Github API Users Reactjs App
+`Github API Users Reactjs App`
 
 In this project, fetching data from github-api-users and displaying them.
 Pages:-
@@ -8,6 +8,5 @@ Pages:-
 (b) `/users`, to display list of all users
 
 Using `useEffect` and `react-hooks` here, instead of `class` components.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## https://github-users-reactjs-app.herokuapp.com
-https://github-api-users-app.netlify.com/
