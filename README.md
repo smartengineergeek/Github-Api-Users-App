@@ -9,4 +9,5 @@ Pages:-
 
 Using `useEffect` and `react-hooks` here, instead of `class` components.
 
- https://github-users-reactjs-app.herokuapp.com
+## https://github-users-reactjs-app.herokuapp.com
+https://github-api-users-app.netlify.com/
